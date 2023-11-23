@@ -2,9 +2,6 @@
 
 A Linktree clone featuring a user account system and authentication to showcase social links using React, NextJS, TailwindCSS, & Supabase.
 
-![Example](images/ex.png)
-![Demo](images/demo.gif)
-
 ## Features 
 - Registration & User Account System for Personalized Pages.
 - Email Verification for Secure Access.
