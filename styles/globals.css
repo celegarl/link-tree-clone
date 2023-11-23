@@ -5,6 +5,7 @@
 
 html,
 body {
+  background: #FFF5EE;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -28,4 +29,26 @@ a {
     color: black; 
     background: black;
   }
+}
+
+/* Adjust Link Color */
+
+.custom-color1 {
+  background-color: #FFB6C1;
+}
+
+.custom-color1:hover {
+  background-color: #ffe1e1;
+}
+
+.custom-color2 {
+  background-color: #FAA0A0;
+}
+
+.custom-color2:hover {
+  background-color: #FFC0CB;
+}
+
+.custom-color3 {
+  background-color: #ffd8d8;
 }

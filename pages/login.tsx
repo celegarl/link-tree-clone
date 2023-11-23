@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
+import { useState } from "react";     
 import supabase from "@/utils/supabaseClient";
-import { useState } from "react";
 
 export default function Login() {
     const [email, setEmail] = useState<string | undefined>();
@@ -9,24 +9,25 @@ export default function Login() {
 
     async function signInWithEmail() {
         try {
-           if (email && password) {
-            const resp = await supabase.auth.signInWithPassword({
-                email: email, 
-                password: password
-            });
-            if (resp.error) throw resp.error;
-            const userId = resp.data.user?.id;
-            console.log("userId: ", userId);
-            router.push("/");
-          }
-        } catch {} 
+            if (email && password) {
+                const resp = await supabase.auth.signInWithPassword({
+                    email: email,
+                    password: password,
+                });
+                if (resp.error) throw resp.error;
+                const userId = resp.data.user?.id;
+                console.log("userId: ", userId);
+                router.push("/celegarl");
+            }
+        } catch (error) {
+            console.log("error: ", error);
+        }
     }
-
     return (
         <div className="flex flex-col w-full justify-center items-center">
             <label 
                 htmlFor="email" 
-                className="block text-sm text-gray-500 dark:text-gray-300"
+                className="mt-8 block text-sm text-gray-500 dark:text-gray-300"
             >
                 Email Address
             </label>
@@ -41,10 +42,10 @@ export default function Login() {
 
                 <input 
                     type="email" 
-                    placeholder="john@example.com" 
+                    placeholder="celeste@example.com" 
                     className="block w-full py-2.5 text-gray-700 placeholder-gray-400/70 bg-white border border-gray-200 rounded-lg pl-11 pr-5 rtl:pr-11 rtl:pl-5 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    onChange={(e) => setEmail(e.target.value)}/>
-
+                    onChange={(e) => setEmail(e.target.value)}
+                />
             </div>
 
             <div className="flex items-center justify-between">
@@ -53,12 +54,6 @@ export default function Login() {
                     >
                     Password
                 </label>
-                {/* 
-                
-                Forget Password Code (Commented Out B/c Not Aligned Properly and Not Functional)
-                <a href="#" className="text-xs text-gray-600 hover:underline dark:text-gray-400">Forget Password?</a>
-                
-                */}
             </div>
 
             <div className="relative flex items-center mt-2">
@@ -74,15 +69,20 @@ export default function Login() {
                     type="password" 
                     placeholder="********" 
                     className="block w-full py-2.5 text-gray-700 placeholder-gray-400/70 bg-white border border-gray-200 rounded-lg pl-5 pr-11 rtl:pr-5 rtl:pl-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    onChange={(e) => setPassword(e.target.value)}/>
+                    onChange={(e) => setPassword(e.target.value)}
+                    />
             </div>
+
             <div className="relative flex items-center mt-2">
-                <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50 mt-4"
-                                onClick={signInWithEmail}
-                                >
-                    Sign Up
+                <button
+                    type="button" 
+                    className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform custom-color1 rounded-lg hover:custom-color1 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50 mt-4"
+                    onClick={signInWithEmail}
+                >
+                    Login
                 </button>
             </div>
+
         </div>
     )
 }
