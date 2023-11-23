@@ -1,4 +1,4 @@
-# Link-tree-Clone
+# Link-tree-clone
 
 A Linktree clone featuring a user account system and authentication to showcase social links using React, NextJS, TailwindCSS, & Supabase.
 
