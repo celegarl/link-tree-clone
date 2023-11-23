@@ -31,8 +31,7 @@ I developed this project with specific objectives in mind:
    npm install @supabase/supabase-js
    ```
 5. Create a new table in Supabase
-
-6. Table: links
+ Table: links
 
 - Columns:
   - 'title' (varchar)
@@ -40,15 +39,15 @@ I developed this project with specific objectives in mind:
   - 'user_id' (varchar)
 - Disable RLS (for testing)
 
-7. Create an additional new table
-  Table: users
+6. Create an additional new table
+ Table: users
 
 - Columns:
   - 'profile_picture_url' (varchar)
   - 'username' (varchar)
 - Disable RLS (for testing)
 
-8. Create a 'public1' bucket in storage
+7. Create a 'public1' bucket in storage
 
 Establish a policy for the bucket under 'Other policies under storage.objects'
 
