@@ -30,8 +30,7 @@ I developed this project with specific objectives in mind:
    ```bash
    npm install @supabase/supabase-js
    ```
-5. Create a new table in Supabase
- Table: links
+5. Create a new table in Supabase and name it "links"
 
 - Columns:
   - 'title' (varchar)
@@ -39,8 +38,7 @@ I developed this project with specific objectives in mind:
   - 'user_id' (varchar)
 - Disable RLS (for testing)
 
-6. Create an additional new table
- Table: users
+6. Create an additional new table and name it "users"
 
 - Columns:
   - 'profile_picture_url' (varchar)
